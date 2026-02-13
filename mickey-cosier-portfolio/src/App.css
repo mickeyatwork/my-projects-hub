@@ -1,0 +1,175 @@
+/* src/App.css */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /*  --- PALETTE OPTION 1: NEON CYBERPUNK ---
+  --bg-color: #121212;             
+  --card-bg: #1e1e1e;              
+  --text-main: #e0e0e0;            
+  --text-secondary: #a0a0a0;       
+  
+  --primary: #00f2ff;              
+  --secondary: #ff00ff;            
+  --accent: #fcee0a;             
+  */
+
+  /* --- PALETTE OPTION 2: DEEP OCEAN --- */
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --primary: #2dd4bf;   
+  --secondary: #34d399; 
+  --accent: #f472b6;    
+  /**/
+
+  /* --- PALETTE OPTION 3: MIDNIGHT DEV --- 
+  --bg-color: #282a36;
+  --card-bg: #44475a;
+  --text-main: #f8f8f2;
+  --text-secondary: #bfbfbf;
+  --primary: #8be9fd;   
+  --secondary: #bd93f9; 
+  --accent: #f1fa8c;    
+  */
+}
+
+/* GLOBAL STYLES */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  /* Ensure display is BLOCK, not flex */
+  display: block;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* NAVBAR */
+nav {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+nav a {
+  color: var(--text-main);
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* APP CONTAINER */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* GRID LAYOUT */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* CARD STYLING */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Moves up slightly on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary); /* Glows turquoise on hover */
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+  color: var(--primary);
+}
+
+.card p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* TAGS */
+.tags {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  border: 1px solid var(--primary);
+}
+
+/* BUTTONS */
+button {
+  background-color: var(--primary);
+  color: var(--bg-color); /* Dark text on bright button */
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: var(--secondary); /* Turns pink on hover */
+  color: white;
+  box-shadow: 0 0 10px var(--secondary); /* Glowing effect */
+}
+
+.skill-tag {
+  background-color: rgba(255, 255, 255, 0.05); /* Very subtle background */
+  color: var(--primary);                       /* Turquoise text */
+  border: 1px solid var(--primary);            /* Turquoise border */
+  padding: 0.5rem 1rem;
+  border-radius: 50px;                         /* Pill shape */
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background-color: var(--primary);            /* Fills with Turquoise on hover */
+  color: var(--bg-color);                      /* Text turns dark */
+  box-shadow: 0 0 10px var(--primary);         /* Glow effect */
+  transform: translateY(-2px);
+}
